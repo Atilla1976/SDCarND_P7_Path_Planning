@@ -163,7 +163,7 @@ int main() {
               for(int i = 0; i < sensor_fusion.size(); i++)
               {
           	float d = sensor_fusion[i][6];
-          	if(d<(2+4*lane+2)&&d>(2+4*lane-2)) //check if there is a car between both lane lines of my lane
+          	if(d < (2 + 4*lane + 2)&&d>(2 + 4*lane - 2)) //check if there is a car between both lane lines of my lane
           	{
           	  //if there is a car in my lane, check its velocity and position
 		  double vx = sensor_fusion[i][3];		//car's x velocity [m/s]
@@ -214,7 +214,7 @@ int main() {
           	  {
           	    //car is in left lane
           	    float d = sensor_fusion[i][6];
-          	    if(d<(2+4*(lane-1)+2)&&d>(2+4*(lane-1)-2)) //check if there is a car between both lane lines of the lane one left to mine
+          	    if(d < (2 + 4*(lane - 1) + 2) && d > (2 + 4*(lane - 1) - 2)) //check if there is a car between both lane lines of the lane one left to mine
           	    {
           	      double vx = sensor_fusion[i][3];
           	      double vy = sensor_fusion[i][4];
@@ -248,7 +248,7 @@ int main() {
           	  {
           	    //car is in right lane
           	    float d = sensor_fusion[i][6];
-          	    if(d<(2+4*(lane+1)+2)&&d>(2+4*(lane+1)-2))) //check if there is a car between both lane lines of the lane one left to mine
+          	    if(d < (2 + 4*(lane + 1) + 2) && d>(2 + 4*(lane + 1) - 2)) //check if there is a car between both lane lines of the lane one left to mine
           	      { 
           		double vx = sensor_fusion[i][3];
           		double vy = sensor_fusion[i][4];
