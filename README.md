@@ -10,7 +10,8 @@ In this project the goal is to safely navigate around a virtual highway with oth
 
 ## Method
 **1. Step:** Getting started
-
+The path planner outputs a list of x and y global map coordinates. Each pair of x and y coordinates is a point, and all of the points together form a trajectory. Every 20 ms the car moves to the next point on the list. The car's new rotation becomes the line between the previous waypoint and the car's new location. The car moves from point to point perfectly, so I did not have to worry about building a controller for this project.
+In `main.cpp` int
 
 
 
