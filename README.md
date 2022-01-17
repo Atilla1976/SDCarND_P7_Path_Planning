@@ -25,6 +25,12 @@ The result was that the car was moving straight ahead at a speed of almost 50 MP
 
 **2.Step:** Getting the car to drive in its lane<br>
 <br>
+Instead of working with x,y waypoints coordinates, it is much simpler to handle the car's actual and future position in Frenet coordinates.
+
+[image1]: ./data/Frenet.jpg "Frenet Coordinates"
+
+![alt text][image1]
+
 -> Frenet Coordinates
 -> Smoothing the path
 
@@ -49,9 +55,9 @@ behavior planning
 # ![](images/Animation.gif)
 
 
-[image1]: ./data/goal.JPG "Goal"
+[image2]: ./data/goal.JPG "Goal"
 
-![alt text][image1]
+![alt text][image2]
 
 
 
