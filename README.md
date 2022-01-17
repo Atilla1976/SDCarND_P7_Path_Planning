@@ -27,7 +27,7 @@ The result was that the car was moving straight ahead at a speed of almost 50 MP
 <br>
 Instead of working with x,y waypoints coordinates, it is much simpler to handle the car's actual and future position in Frenet coordinates.
 
-[image1]: ./data/Frenet.jpg "Frenet Coordinates"
+[image1]: ./data/Frenetsd.jpg "Frenet Coordinates"
 
 ![alt text][image1]
 
