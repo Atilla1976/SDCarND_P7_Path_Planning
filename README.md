@@ -33,7 +33,7 @@ by Atilla Özdemir, Student @ Udacity, Stuttgart (Germany) in January 2022
 
 
 
-# Original Readme by UDACITY:
+## Original Readme by UDACITY:
 
 ### Simulator.
 You can download the Term3 Simulator which contains the Path Planning Project from the [releases tab (https://github.com/udacity/self-driving-car-sim/releases/tag/T3_v1.2).  
