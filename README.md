@@ -9,9 +9,32 @@ by Atilla Özdemir, Student @ Udacity, Stuttgart (Germany) in January 2022
 In this project the goal is to safely navigate around a virtual highway with other traffic that is driving +-10 MPH of the 50 MPH speed limit. The car's localization and sensor fusion data are provided, there is also a sparse map list of waypoints around the highway. The car should try to go as close as possible to the 50 MPH speed limit, which means passing slower traffic when possible. Other cars will try to change lanes too. The car should avoid hitting other cars at all cost as well as driving inside of the marked road lanes at all times, unless going from one lane to another. The car should be able to make one complete loop around the 6946m highway. Since the car is trying to go 50 MPH, it should take a little over 5 minutes to complete 1 loop. Also the car should not experience total acceleration over 10 m/s² and jerk that is greater than 10 m/s³.
 
 ## Method
-**1. Step:** Getting started
+**1. Step:** Getting started<br>
+<br>
 The path planner outputs a list of x and y global map coordinates. Each pair of x and y coordinates is a point, and all of the points together form a trajectory. Every 20 ms the car moves to the next point on the list. The car's new rotation becomes the line between the previous waypoint and the car's new location. The car moves from point to point perfectly, so I did not have to worry about building a controller for this project.
-In `main.cpp` int
+In `main.cpp` instead of setting the speed directly, `next_x_vals` and `next_y_vals` is passed to the simulator.
+```cpp
+double dist_inc = 0.5;
+for (int i = 0; i < 50; ++i) {
+  next_x_vals.push_back(car_x+(dist_inc*i)*cos(deg2rad(car_yaw)));
+  next_y_vals.push_back(car_y+(dist_inc*i)*sin(deg2rad(car_yaw)));
+}
+```
+In a first step I'll set the points 0.5 m apart. Since the car moves 50 times a second, a distance of 0.5m per move will create a velocity of 25 m/s.
+The result was that the car was moving straight ahead at a speed of almost 50 MPH, ignoring the course of the road or other vehicles.
+
+**2.Step:** Getting the car to drive in its lane<br>
+<br>
+-> Frenet Coordinates
+-> Smoothing the path
+
+
+**3. Step:** How to switch between the lanes<br>
+<br>
+behavior planning
+-> keep in lane
+-> left turn if possible
+-> right turn if possible
 
 
 
@@ -23,10 +46,12 @@ In `main.cpp` int
 
 
 
+# ![](images/Animation.gif)
 
 
+[image1]: ./data/goal.JPG "Goal"
 
-
+![alt text][image1]
 
 
 
