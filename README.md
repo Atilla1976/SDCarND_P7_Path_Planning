@@ -31,9 +31,8 @@ Instead of working with x,y waypoints coordinates, it is much simpler to handle 
 
 ![alt text][image1]
 
--> Frenet Coordinates
--> Smoothing the path
 
+Here there is still the problem that when the vehicle passes a waypoint, it suddenly moves on in the direction of the next waypoint. To smooth the trajectorory one way would be to look for fitting polynomials to waypoints. But I decided for the great and easy to setup and use spline tool for C++, contained in just a single header file. The spline function can be found here: http://kluge.in-chemnitz.de/opensource/spline/
 
 **3. Step:** How to switch between the lanes<br>
 <br>
