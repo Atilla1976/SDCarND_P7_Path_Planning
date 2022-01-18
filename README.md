@@ -32,14 +32,22 @@ Instead of working with x,y waypoints coordinates, it is much simpler to handle 
 ![alt text][image1]
 
 
-Here there is still the problem that when the vehicle passes a waypoint, it suddenly moves on in the direction of the next waypoint. To smooth the trajectorory one way would be to look for fitting polynomials to waypoints. But I decided for the great and easy to setup and use spline tool for C++, contained in just a single header file. The spline function can be found here: http://kluge.in-chemnitz.de/opensource/spline/
+Here there is still the problem that when the vehicle passes a waypoint, it suddenly moves on in the direction of the next waypoint. To smooth the trajectory one way would be to look for fitting polynomials to waypoints. But I decided for the great and easy to setup and use spline tool for C++, contained in just a single header file. The spline function can be found here: http://kluge.in-chemnitz.de/opensource/spline/.
+In a first step the spline matches 5 points:
+  + the last two points of the privious path
+  + 3 anchor points whihe have the location of the car in 30 m basically and then in 60 and 90 m.
 
-**3. Step:** How to switch between the lanes<br>
+In a second step the path is filled with 50 points with a distance to each other that defines the velocity of the ego car.
+ 
+
+
+**3. Step:** Behavior Planning<br>
 <br>
-behavior planning
--> keep in lane
--> left turn if possible
--> right turn if possible
+The behavior planning is implemented in [main.cpp](src/main.cpp) (line 156 - 273) There are three ways to react when the ego car approaches another vehicle in its lane from behind:
+  + keep in lane and adapt the vehicle speed to avoid collision (line 156 - 195)
+  + left turn if possible and safe (line 206 - 238 )
+  + right turn if possible and safe (line 244 - 273)
+
 
 
 
