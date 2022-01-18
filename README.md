@@ -1,6 +1,8 @@
 # CarND-Path-Planning-Project
 Self-Driving Car Engineer Nanodegree Program
-
+<br>
+<br>
+![](data/Animation_Passing_sm2.gif)
 ## Project summary
 by Atilla Özdemir, Student @ Udacity, Stuttgart (Germany) in January 2022
 
@@ -59,7 +61,7 @@ The behavior planning is implemented in [main.cpp](src/main.cpp) (line 156 - 273
 
 
 
-# ![](images/Animation.gif)
+
 
 
 [image2]: ./data/goal.JPG "Goal"
