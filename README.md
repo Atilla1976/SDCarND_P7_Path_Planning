@@ -1,10 +1,11 @@
 # CarND-Path-Planning-Project
 Self-Driving Car Engineer Nanodegree Program
+## Project summary
+by Atilla Özdemir, Student @ Udacity, Stuttgart (Germany) in January 2022
 <br>
 <br>
 ![](data/Animation_Passing_sm2.gif)
-## Project summary
-by Atilla Özdemir, Student @ Udacity, Stuttgart (Germany) in January 2022
+
 
 ### Description
 
