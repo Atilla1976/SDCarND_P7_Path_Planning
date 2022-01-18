@@ -9,7 +9,7 @@ by Atilla Özdemir, Student @ Udacity, Stuttgart (Germany) in January 2022
 
 ### Description
 
-In this project the goal is to safely navigate around a virtual highway with other traffic that is driving +-10 MPH of the 50 MPH speed limit. The car's localization and sensor fusion data are provided, there is also a sparse map list of waypoints around the highway. The car should try to go as close as possible to the 50 MPH speed limit, which means passing slower traffic when possible. Other cars will try to change lanes too. The car should avoid hitting other cars at all cost as well as driving inside of the marked road lanes at all times, unless going from one lane to another. The car should be able to make one complete loop around the 6946m highway. Since the car is trying to go 50 MPH, it should take a little over 5 minutes to complete 1 loop. Also the car should not experience total acceleration over 10 m/s² and jerk that is greater than 10 m/s³.
+In this project the goal is to safely navigate around a virtual highway with other traffic that is driving +-10 MPH of the 50 MPH speed limit. The car's localization and sensor fusion data are provided, there is also a sparse map list of waypoints around the highway. The car should try to go as close as possible to the 50 MPH speed limit, which means passing slower traffic when possible. Other cars will try to change lanes, too. The car should avoid hitting other cars at all cost as well as driving inside of the marked road lanes at all times, unless going from one lane to another. The car should be able to make one complete loop around the 6946m highway. Since the car is trying to go 50 MPH, it should take a little over 5 minutes to complete 1 loop. Also the car should not experience total acceleration over 10 m/s² and jerk that is greater than 10 m/s³.
 
 ## Method
 **1. Step:** Getting started<br>
@@ -23,8 +23,9 @@ for (int i = 0; i < 50; ++i) {
   next_y_vals.push_back(car_y+(dist_inc*i)*sin(deg2rad(car_yaw)));
 }
 ```
-In a first step I'll set the points 0.5 m apart. Since the car moves 50 times a second, a distance of 0.5m per move will create a velocity of 25 m/s.
+In a first step I set the points 0.5 m apart. Since the car moves 50 times a second, a distance of 0.5m per move will create a velocity of 25 m/s.
 The result was that the car was moving straight ahead at a speed of almost 50 MPH, ignoring the course of the road or other vehicles.
+
 
 **2.Step:** Getting the car to drive in its lane<br>
 <br>
@@ -35,10 +36,10 @@ Instead of working with x,y waypoints coordinates, it is much simpler to handle 
 ![alt text][image1]
 
 
-Here there is still the problem that when the vehicle passes a waypoint, it suddenly moves on in the direction of the next waypoint. To smooth the trajectory one way would be to look for fitting polynomials to waypoints. But I decided for the great and easy to setup and use spline tool for C++, contained in just a single header file. The spline function can be found here: http://kluge.in-chemnitz.de/opensource/spline/.
+Here there is still the problem that when the vehicle passes a waypoint, it suddenly moves on in the direction of the next waypoint. To smooth the trajectory one way would be to look for fitting polynomials to waypoints. But I decided to take the easy to setup and use spline tool for C++, contained in just a single header file. The spline function can be found here: http://kluge.in-chemnitz.de/opensource/spline/.
 In a first step the spline matches 5 points:
-  + the last two points of the privious path
-  + 3 anchor points whihe have the location of the car in 30 m basically and then in 60 and 90 m.
+  + the last two points of the previous path
+  + 3 anchor points which have the location of the car first in 30 m and then in 60 and 90 m.
 
 In a second step the path is filled with 50 points with a distance to each other that defines the velocity of the ego car.
  
